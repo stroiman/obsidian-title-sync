@@ -1,0 +1,11 @@
+{
+	"id": "stroiman-title-renamer",
+	"name": "Title renamer",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Syncrhonises title in markdown with file name",
+	"author": "Peter Strøiman",
+	"authorUrl": "https://stroiman.com",
+	"fundingUrl": "https://stroiman.com/support-me",
+	"isDesktopOnly": false
+}
