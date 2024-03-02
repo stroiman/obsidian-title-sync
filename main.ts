@@ -54,12 +54,10 @@ export default class MyPlugin extends Plugin {
 
 	async onload() {
 		// await this.loadSettings();
-		this.app.vault.on("rename", this.handleRename);
+		this.registerEvent(this.app.vault.on("rename", this.handleRename));
 	}
 
-	onunload() {
-		this.app.vault.off("rename", this.handleRename);
-	}
+	onunload() {}
 
 	// async loadSettings() {
 	// 	this.settings = Object.assign(
