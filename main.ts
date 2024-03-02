@@ -20,7 +20,9 @@ export default class MyPlugin extends Plugin {
 	}
 
 	handleRename(file: TFile, oldPath: string) {
-		const metadata = this.app.metadataCache.getFileCache(file);
+		const newMetadata = this.app.metadataCache.getFileCache(file);
+		const oldMetadata = this.app.metadataCache.getCache(oldPath);
+		const metadata = newMetadata || oldMetadata;
 		const oldName = path.parse(oldPath).name;
 		const h1 = metadata?.headings?.find((x) => x.level === 1);
 
