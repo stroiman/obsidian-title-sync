@@ -32,22 +32,32 @@ export default class MyPlugin extends Plugin {
 
 	handleRename(file: TFile, oldPath: string) {
 		const metadata = this.app.metadataCache.getFileCache(file);
-		if (!metadata) {
-			return;
-		}
 		const oldName = path.parse(oldPath).name;
-		const h1 = metadata?.headings.find((x) => x.level === 1);
+		const h1 = metadata?.headings?.find((x) => x.level === 1);
 
-		if (
-			h1 &&
-			h1.heading.localeCompare(oldName, "en", { sensitivity: "base" }) ===
-				0
-		) {
+		if (h1 && h1.heading === oldName) {
 			this.app.vault.process(file, (contents) => {
-				const start = contents.slice(0, h1.position.start.offset);
-				const end = contents.slice(h1.position.end.offset);
-				const newHeading = "# " + file.basename;
-				return start + newHeading + end;
+				const oldHeading = contents
+					.slice(h1.position.start.offset + 1, h1.position.end.offset)
+					.trim();
+				if (oldHeading !== oldName) {
+					// Just a safety precaution if the cached metadata was not
+					// in sync with file contents, we'd corrupt the file.
+					// We could possibly retry, but this is _probably_ onlikely.
+					console.warn(
+						"stroiman-title-renamer - bail due inconsistent data",
+						{
+							oldHeading,
+							oldName,
+						},
+					);
+					return contents;
+				} else {
+					const start = contents.slice(0, h1.position.start.offset);
+					const end = contents.slice(h1.position.end.offset);
+					const newHeading = "# " + file.basename;
+					return start + newHeading + end;
+				}
 			});
 		}
 	}

@@ -41,3 +41,18 @@ type in the real name of the note. But after having done that, only the file
 name is changed, not the template-generated inline title.
 
 This plugin fixes that.
+
+## Nothing happens, why?
+
+If the file name and `h1` is in sync, and nothing happens, Obsidian's metadata
+cache is probably not in sync.
+
+Obsidian has a data structure representing representing a rich model of the
+data, specifying that "here is a title", "here is body text", "here is a code
+block", etc. This is used to find the location and text of the title.
+
+When the file is updated, this is an operation on the entire unprocessed text of
+the file. If the metadata was not in sync with the latest content, the locations
+from the previous step are no longer valid. The plugin will not modify the file
+if this happens, as it'd probably corrupt the file (an example could be
+overwriting frontmatter with the new title).
