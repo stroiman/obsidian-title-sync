@@ -1,15 +1,4 @@
-import {
-	TFile,
-	App,
-	Editor,
-	MarkdownView,
-	Modal,
-	Notice,
-	Plugin,
-	PluginManifest,
-	PluginSettingTab,
-	Setting,
-} from "obsidian";
+import { TFile, App, Plugin, PluginManifest } from "obsidian";
 import * as path from "path";
 
 // Remember to rename these classes and interfaces!
