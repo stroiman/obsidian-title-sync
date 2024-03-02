@@ -75,3 +75,9 @@ Linux/MacOS needs to be tested here.
 Handle localised case insensitivity in title comparison. This would require a
 settings page, so the user can specify the language that they actually write
 notes in.
+
+## Support this work
+
+You can support my work here:
+
+<a href="https://www.buymeacoffee.com/stroiman" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
