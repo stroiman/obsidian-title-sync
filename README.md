@@ -3,6 +3,8 @@
 Plugin for [Obsidian](https://obsidian.md) to keep inline title synced with file
 name.
 
+NOTE: currently only works on desktop.
+
 ## Description
 
 When you rename a file, this plugin will search for an "H1", in the document. If
@@ -56,3 +58,20 @@ the file. If the metadata was not in sync with the latest content, the locations
 from the previous step are no longer valid. The plugin will not modify the file
 if this happens, as it'd probably corrupt the file (an example could be
 overwriting frontmatter with the new title).
+
+## TODO (perhaps)
+
+Currently, I can imagine these two improvements.
+
+### Make this work on mobile 
+
+Should be simple enough. Currently this depends on node's "path" module to get
+the expected old title from the old file name. This could easily be replaced
+with a regex, but in particular core difference between Windows filesystem and
+Linux/MacOS needs to be tested here.
+
+### Use localised case insensitive search.
+
+Handle localised case insensitivity in title comparison. This would require a
+settings page, so the user can specify the language that they actually write
+notes in.
