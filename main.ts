@@ -11,7 +11,7 @@ import * as path from "path";
 // 	mySetting: "default",
 // };
 
-export default class MyPlugin extends Plugin {
+export default class StroimanTitleRenamerPlugin extends Plugin {
 	// settings: MyPluginSettings;
 
 	constructor(app: App, manifest: PluginManifest) {
