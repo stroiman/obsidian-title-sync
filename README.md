@@ -51,13 +51,32 @@ cache is probably not in sync.
 
 Obsidian has a data structure representing representing a rich model of the
 data, specifying that "here is a title", "here is body text", "here is a code
-block", etc. This is used to find the location and text of the title.
+block", etc. This is what the plugin use to find the location and text of the 
+heading.
 
 When the file is updated, this is an operation on the entire unprocessed text of
 the file. If the metadata was not in sync with the latest content, the locations
 from the previous step are no longer valid. The plugin will not modify the file
 if this happens, as it'd probably corrupt the file (an example could be
 overwriting frontmatter with the new title).
+
+## What sets this apart from "Obsidian Filename Heading Sync"?
+
+There is an alternate plugin, you might want to check out:
+[Obsidian Filename Heading Sync](https://github.com/dvcrn/obsidian-filename-heading-sync).
+This handles some of the same problems, but seems to have a different 
+philosophy, that the filename and heading should _always_ be in synced.
+
+That makes "Obsidian Filename Heading Sync" much more aggressive than mine, a
+behaviour that does not fit my own workflow. E.g., the default settings will:
+
+- When you change the heading in the markdown "it" will rename the file.
+- When you open a file without a heading in the contents, it will add one.
+
+I don't want neither of those two behaviours. If I change the heading in the 
+markdown contents, it's a deliberate action on my part to have a different 
+heading than file names. (otherwise I would have just renamed the file). And
+creating the heading in the contents is a problem I use templates to solve.
 
 ## TODO (perhaps)
 
