@@ -1,9 +1,9 @@
 {
-	"id": "stroiman-title-renamer",
+	"id": "title-renamer",
 	"name": "Title renamer",
 	"version": "1.0.5",
 	"minAppVersion": "0.15.0",
-	"description": "Syncrhonise title in markdown when note is renamed",
+	"description": "Synchronise title in markdown when file is renamed.",
 	"author": "Peter Strøiman",
 	"authorUrl": "https://stroiman.com",
 	"fundingUrl": "https://www.buymeacoffee.com/stroiman",
