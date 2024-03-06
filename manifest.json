@@ -1,7 +1,7 @@
 {
 	"id": "title-renamer",
 	"name": "Title renamer",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"minAppVersion": "0.15.0",
 	"description": "Synchronise title in markdown when file is renamed.",
 	"author": "Peter Strøiman",
