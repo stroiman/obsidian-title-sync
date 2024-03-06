@@ -67,8 +67,8 @@ There is an alternate plugin, you might want to check out:
 This handles some of the same problems, but seems to have a different 
 philosophy, that the filename and heading should _always_ be in synced.
 
-That makes "Obsidian Filename Heading Sync" much more aggressive than mine, a
-behaviour that does not fit my own workflow. E.g., the default settings will:
+That makes "Obsidian Filename Heading Sync" much more aggressive than mine.
+E.g., the default settings will:
 
 - When you change the heading in the markdown "it" will rename the file.
 - When you open a file without a heading in the contents, it will add one.
