@@ -70,13 +70,16 @@ philosophy, that the filename and heading should _always_ be in synced.
 That makes "Obsidian Filename Heading Sync" much more aggressive than mine.
 E.g., the default settings will:
 
-- When you change the heading in the markdown "it" will rename the file.
-- When you open a file without a heading in the contents, it will add one.
+- Rename the file when you change the heading in the markdown contents.
+- Insert a heading in the markdown contents when opening a file that doesn't
+  have one.
 
 I don't want neither of those two behaviours. If I change the heading in the 
 markdown contents, it's a deliberate action on my part to have a different 
 heading than file names. (otherwise I would have just renamed the file). And
 creating the heading in the contents is a problem I use templates to solve.
+
+This also makes this plugin significantly simpler, as there are no edge
 
 ## TODO (perhaps)
 
